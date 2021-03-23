@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+</head>
+
+<body>
+    <header>
+        <h2>Моите бележки</h2>
+    </header>
+
+    <form>
+        <h3>Нова бележка</h3>
+
+        <label for="name">Име</label>
+        <br>
+        <input required id="name">
+        <br>
+        <br>
+
+        <label for="dateandtime">Дата и час</label>
+        <br>
+        <input id="dateandtime" type="datetime-local">
+        <br>
+        <br>
+
+        <label for="desc">Описание</label>
+        <br>
+        <textarea id="desc" name="description" rows=10 cols=20></textarea>
+        <br>
+        <br>
+
+        <label for="priority">Приоритет</label>
+        <br>
+        <select id="priority" name="priority">
+            <option value="high">Висок</option>
+            <option value="normal">Среден</option>
+            <option value="low">Нисък</option>
+        </select>
+        <br>
+        <br>
+
+        <button type="button">Запиши</button>
+    </form>
+</body>
+
+</html>
