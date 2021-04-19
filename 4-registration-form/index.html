@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Регистрация</title>
+</head>
+
+<body>
+    <form>
+        <input id="username-input" type="text" placeholder="Потребителско име" class="input-normal">
+        <div class="error-message-container" id="error-message-container-username"></div>
+
+        <input id="password-input" type="password" placeholder="Парола" class="input-normal">
+        <div class="error-message-container" id="error-message-container-password"></div>
+
+        <input id="phone-input" type="text" placeholder="Телефон" class="input-normal">
+        <div class="error-message-container" id="error-message-container-number"></div>
+
+        <input id="e-mail-input" type="email" placeholder="Имейл адрес" class="input-normal">
+        <div class="error-message-container" id="error-message-container-email"></div>
+
+        <select id="owner-menu">
+            <option value="owner">Собственик</option>
+            <option value="tenant">Наемател</option>
+        </select>
+
+        <input id="number-input" type="text" placeholder="Номер на апартамента" class="input-normal">
+        <div class="error-message-container" id="error-message-container-apartment-number"></div>
+
+        <button id="register-button" type="button" onclick="validateAndSubmit()">Регистрирай ме!</button>
+    </form>
+</body>
+
+</html>

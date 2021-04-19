@@ -1,0 +1,69 @@
+body{
+    background-color: #defdf1;
+    text-align: center;
+}
+
+form{
+    width: 400px;
+    margin: auto;
+    margin-top: 88px;
+    border: 2px solid #427d23;
+    padding: 12px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+input{
+    width: 363px;
+    height: 32px;
+}
+
+select, button{
+    width: 371px;
+    height: 38px;
+}
+
+input, button, select{
+    margin-bottom: 12px;
+    font-size: medium;
+    border: 2px solid #c3cdc0;
+}
+
+button{
+    margin-bottom: 0px;
+    background-color: #cfe7d9;
+    color: #558d3d;
+}
+
+button:hover{
+    background-color: #558d3d;
+    color: #dcf1ea;
+    cursor: pointer;
+}
+
+input:hover, select:hover{
+    border-color: #427d23;
+}
+
+input:focus, select:focus{
+    outline: none;
+}
+
+/* error message blocks */
+
+.error-message{
+    color:white;
+    background-color: #b0706d;
+    padding-top: 10px;
+    height: 28px;
+    width: 365px;
+    padding-left: 6px;
+    margin: auto;
+    margin-bottom: 12px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.input-error{
+    border-color:#b0706d;
+}
