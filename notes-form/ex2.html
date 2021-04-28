@@ -17,30 +17,28 @@
             <h2>Нова бележка</h2>
         </header>
 
-        <article id="notes-form">
-            <form>
-                <label for="name">Име на бележката</label>
-                <input required id="name" type="text" class="form-item">
+        <form>
+            <label for="name">Име на бележката</label>
+            <input required id="name" type="text" class="form-item">
 
-                <label for="date-and-time">Дата и час</label>
-                <input required id="date-and-time" type="datetime-local" class="form-item">
+            <label for="date-and-time">Дата и час</label>
+            <input required id="date-and-time" type="datetime-local" class="form-item">
 
-                <label for="description">Описание</label>
-                <textarea id="description" rows=10 cols=30 class="form-item"></textarea>
+            <label for="description">Описание</label>
+            <textarea id="description" rows=10 cols=30 class="form-item"></textarea>
 
-                <label for="priority">Приоритет</label>
-                <select id="priority" class="form-item">
-                    <option value="high">Висок</option>
-                    <option value="medium">Среден</option>
-                    <option value="low">Нисък</option>
-                </select>
+            <label for="priority">Приоритет</label>
+            <select id="priority" class="form-item">
+                <option value="high">Висок</option>
+                <option value="medium">Среден</option>
+                <option value="low">Нисък</option>
+            </select>
 
-                <div class="error-message" id="empty-fields">Моля, попълнете всички полета</div>
+            <div class="error-message" id="empty-fields">Моля, попълнете всички полета</div>
 
-                <button id="sumbit-button" type="button">Запиши</button>
-                <!--the type of the button will be changed later-->
-            </form>
-        </article>
+            <button id="sumbit-button" type="button" class="form-item">Запиши</button>
+            <!--the type of the button will be changed later-->
+        </form>
     </aside>
 
     <section id="saved-notes">
