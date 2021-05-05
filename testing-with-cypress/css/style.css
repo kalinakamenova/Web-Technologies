@@ -5,8 +5,7 @@ html{
 body{
     height: 100%;
     margin: 0;
-    background-color: #2c2b30;
-    background: linear-gradient(90deg, #2c2b308e 0%, #2c2b30 100%);
+    background-color: #0d0611;
     background-image: url("../img/background_image1.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -14,16 +13,20 @@ body{
     background-attachment: fixed;
 }
 
-header{
+.main-header{
     display: block;
     padding: 20px;
     text-align: center;
     position: relative;
-
 }
 
 p{
     text-align: justify;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+li{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 ul{
@@ -45,70 +48,74 @@ section{
     width: 80%;
     text-align: center;
     margin: auto;
-    color: #4f4f51;
+    color: #0d0611;
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    color: white;
 }
 
 .main-heading{
-    color: #f58f7c;
+    color: #ffe705;
     font-style: bold;
     font-size: xxx-large;
 
 }
 
-.navigation-bar{
+nav{
     text-align: center;
-    background-color: #f58f7c;
+    background-color: #ffe705;
     overflow: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .buttons-container{
     display: inline-flex;
 }
 
-#top-btn{
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 10%; 
-    z-index: 99;
-    border: 1px solid black;
-    outline: none;
-    background-color: #f58f7c; 
-    color: black;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 10px; 
-}
-  
-#top-btn:hover {
-    background-color: #d16d5b;
-}
-
 .nav-button{
     text-decoration: none;
-    color: #4f4f51;
+    color: #0d0611;
     padding: 20px;
-
+    font-size: large;
 }
 
 .nav-button:hover{
-    background-color:#d16d5b;
+    background-color:#ffd900;
 }
 
 .section-heading{
-    background-color: #f58f7c;
+    background-color: #ffe705;
     padding: 5px;
     text-align: center;
-
     margin-top: 20px;
     border-radius: 10px;
 }
 
 .section-content{
     color: white;
-    font-size: large;
-    background-color: rgba(255, 255, 255, 0.527);
+    font-size: larger;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
     margin-top: 10px;
+}
+
+code{
+    background-color: #ffd900;
+    color: #0d0611;
+    display: inline-block;
+    padding: 5px;
+    text-align: left;
+    border-radius: 10px;
 }

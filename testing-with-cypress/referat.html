@@ -6,33 +6,30 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <script defer src="./javascript/main.js"></script>
     <title>Testing with Cypress</title>
+    <link rel="icon" href="./img/cypress-icon.png" type="image/x-icon">
 </head>
 
 <body>
-    <header>
+    <header class="main-header">
         <h1 class="main-heading">Тестване на уеб приложения със Cypress</h1>
     </header>
 
-    <div class="navigation-bar">
-        <div class="buttons-container">
+    <nav id="navigation-bar">
+        <article class="buttons-container">
             <a href="#introduction" class="nav-button">Въведение</a>
             <a href="#why-cypress" class="nav-button">Защо Cypress?</a>
             <a href="#how-to" class="nav-button">Тестване със Cypress</a>
             <a href="#cypress-vs-selenium" class="nav-button">Cypress vs Selenium</a>
             <a href="#sources" class="nav-button">Източници</a>
-        </div>
-    </div>
-
-    <div class="back-to-top">
-        <button onclick="topFunction()" id="top-btn" title="Go to top">Back to top</button>
-    </div>
+        </article>
+    </nav>
 
     <section id="introduction">
-        <div class="section-heading">
+        <header class="section-heading">
             <h3>ВЪВЕДЕНИЕ</h3>
-        </div>
+        </header>
 
-        <div class="section-content">
+        <article class="section-content">
             <p>
                 Уеб тестването е една от най-важните части от разработката на уеб приложения.
                 С повишаването на изискванията за бързо пускане на пазара, нуждата от стабилни инструменти за
@@ -75,14 +72,15 @@
                 <li>Не може да бъде използван за мобилни приложения</li>
             </ul>
             </p>
-        </div>
+        </article>
     </section>
 
     <section id="why-cypress">
-        <div class="section-heading">
+        <header class="section-heading">
             <h3>7 ПРИЧИНИ ДА ИЗБЕРЕМ CYPRESS</h3>
-        </div>
-        <div class="section-content">
+        </header>
+
+        <article class="section-content">
             <ol>
                 <li>Cypress не използва Selenium</li>
                 <p>
@@ -125,8 +123,10 @@
                     инструмента и библиотеки, за да подготвим тестовия пакет. В Cypress се съдържат функциите на някои
                     от най-добрите инструменти (Mocha, Chai, Sinon.JS и т.н.), които безпроблемно работят заедно.
                 </p>
-                <img src="./img/before-after-cypress.png" alt="Преди и след използването на Cypress">
-                <p>Фиг.1 End-to-end тестването преди и след Cypress</p>
+                <figure>
+                    <img src="./img/before-after-cypress.png" alt="Преди и след използването на Cypress">
+                    <figcaption>Фиг.1 End-to-end тестването преди и след Cypress</figcaption>
+                </figure>
 
                 <li>Cypress е за разработчици и за QA инженери</li>
                 <p>
@@ -149,41 +149,244 @@
                 Крайният резултат е по-бърза разработка, по-добър код и изчерпателно тестване.
                 </p>
             </ol>
-        </div>
+        </article>
     </section>
 
     <section id="how-to">
-        <div class="section-heading">
+        <header class="section-heading">
             <h3>ТЕСТВАНЕ СЪС CYPRESS</h3>
-        </div>
-        <div class="section-content">
+        </header>
+
+        <article class="section-content">
             <p>
                 В този раздел ще откриете как се прави един примерен тест със Cypress, разгледан малко по-подробно - от
                 инсталирането на инструмента до кода на самия тест.
             </p>
+
             <ol>
                 <li>Инсталиране</li>
+                <p>
+                    Има множество начини за инсталиране на инструмента. Първият от тях е чрез npm (мениджър на пакети за
+                    JavaScript) и следната команда в терминала:
+                </p>
+                <code class="one-line">
+                    npm install cypress
+                </code>
+                <p>Код 1. Инсталиране чрез npm</p>
+                <p>
+                    Вторият вариант е чрез yarn – друг мениджър на пакети. Инсталацията чрез него отново става с една
+                    команда:
+                </p>
+                <code class="one-line">
+                    yarn add cypress
+                </code>
+                <p>Код 2. Инсталиране чрез yarn</p>
+                <p>
+                    Ако нямате инсталиран нито един от тези мениджъри, можете да инсталирате Cypress по най-класическия
+                    начин – чрез директно изтегляне на архива с инсталационни файлове от
+                    <a href="https://download.cypress.io/desktop" target="_blank">тук</a>.
+                </p>
+
                 <li>Отваряне</li>
+                <p>
+                    Ако сте използвали npm за инсталирането, Cypress се намира във вашата ./node_modules директория и
+                    може да бъде отворен със следната команда:
+                </p>
+                <code class="one-line">
+                    ./node_modules/.bin/cypress open
+                </code>
+                <p>Код 3. Отваряне чрез npm</p>
+                <p>
+                    Друг вариант е да използваме npx (package runner за npm), който е включен във версиите на npm след
+                    5.2, а може да бъде инсталиран и отделно:
+                </p>
+                <code class="one-line">
+                    npx cypress open
+                </code>
+                <p>Код 4. Отваряне чрез npx</p>
+                <p>
+                    Ако Cypress е инсталиран чрез yarn, може да бъде отворен по следния начин:
+                </p>
+                <code class="one-line">
+                    yarn run cypress open
+                </code>
+                <p>Код 5. Отваряне чрез yarn</p>
+                <p>
+                    В случай, че сте избрали да изтеглите директно архива с файлове, просто отворете Cypress.exe и ще
+                    видите следният екран:
+                </p>
+                <figure>
+                    <img src="./img/cypress-home-screen.png" alt="Начален екран">
+                    <figcaption>Фиг.2 Начален екран на Cypress</figcaption>
+                </figure>
+
                 <li>Показване на примерни тестове</li>
                 <p>Когато отворим проект със Cypress за първи път, инструментът автоматично създава няколко примерни
-                    теста, които демонстрират някои от възможностите му:</p>
-                <img src="./img/example-tests.png" alt="Списък с предложени тестове">
-                <p>Фиг.2 Списък с автоматично създадени тестове</p>
-                <li>Изпълняване на теста</li>
-                <li>Анализ на резултатите</li>
-                <li>Разглеждане на кода</li>
-                <img src="./img/test-code.png" alt="Код на изпълнения тест">
-                <p>Фиг.3 Код на изпълнения тест</p>
+                    теста, които демонстрират част от възможностите му:
+                </p>
+                <figure>
+                    <img src="./img/example-tests.png" alt="Примерни тестове">
+                    <figcaption>Фиг.3 Списък със създадените примерни тестове</figcaption>
+                </figure>
+                <p>
+                    При отваряне на всеки един от тестовете, той автоматично започва да се изпълнява. Виждаме списък с
+                    команди (или т.нар. “Command Log”), които се стартират последователно, както и каква част от тях са
+                    изпълнени успешно. Ние можем да използваме част от тях, да ги променяме, добавяме и изтриваме:
+                </p>
+                <figure>
+                    <img src="./img/test-actions.png" alt="Примерен тест">
+                    <figcaption>Фиг.4 Списък с команди на примерен тест</figcaption>
+                </figure>
 
+                <li>Пробен тест</li>
+                <p>
+                    Все още не знаем нищо за писането на тестове със Cypress, но вече знаем как се изпълняват. Ще
+                    напишем първия си тест, като създадем файла sample.spec.js в любимото си IDE:
+                </p>
+                <pre><code class="multiple-lines">
+describe('My First Test', () => {
+    it('Does not do much!', () => {
+    expect(true).to.equal(true)
+    })
+})
+                </code></pre>
+                <p>Код 6. Създаване на sample.spec.js</p>
+                <p>
+                    Когато запазим нашия файл и го отворим със Cypress, би трябвало да видим как браузърът се
+                    презарежда. Когато го отворим и изпълним, вече ще имаме първия си успешен тест! (Може да не прави
+                    нищо полезно, но поне е успешен):
+                </p>
+                <figure>
+                    <img src="./img/successful-test.png" alt="Успешен тест" style="width: 50%; margin-left: 0px;">
+                    <figcaption>Фиг.5 Първи успешен тест</figcaption>
+                </figure>
+                <p>
+                    Ако искаме да видим как изглежда един неуспешен тест (за първи и последен път, надяваме се), можем
+                    просто да сменим на третия ред стойността в equal на false, получавайки следния резултат:
+                </p>
+                <figure>
+                    <img src="./img/failing-test.png" alt="Неуспешен тест" style="width: 50%; margin-left: 0px;">
+                    <figcaption>Фиг.6 Първи неуспешен тест</figcaption>
+                </figure>
+                <p>
+                    Както вече видяхме в предходната стъпка, Cypress предоставя страхотна визуализация на тестове,
+                    команди, заявки и много други, като показва и броят на преминатите успешно и неуспешно тестове. Това
+                    е изключително удобно при големи проекти, тъй като лесно може да се групират, преглеждат и
+                    визуализират тестове, което позволява и бързи промени в кода, ако са необходими.
+                </p>
+
+                <li>Първи (истински) тест</li>
+                <p>
+                    За да напишем един тест, трябва да имаме уеб страница, която да тестваме. За наше улеснение, Cypress
+                    има вграден набор от примерни уеб приложения. За целта ще използваме уеб приложението „Kitchen
+                    Sink“, което е един от тези примери.
+                </p>
+                <p>
+                    На мястото на предишния разгледан пример, вече можем да напишем следния код, който подава адреса на
+                    командата cy.visit():
+                </p>
+                <pre><code class="multiple-lines">
+describe('My First Test', () => {
+    it('Visits the Kitchen Sink', () => {
+    cy.visit('https://example.cypress.io')
+    })
+})
+                </code></pre>
+                <p>Код 7. Демонстрация на cy.visit()</p>
+                <p>
+                    Командата е записана в “Command Log” и е изпълнена успешно. Вече имаме отворена страница и е крайно
+                    време да направим нещо в нея. Нека проверим дали в някой елемент от страницата се съдържа думата
+                    “type”. За тази цел използваме командата cy.contains():
+                </p>
+                <pre><code class="multiple-lines">
+describe('My First Test', () => {
+    it('finds the content "type"', () => {
+    cy.visit('https://example.cypress.io')
+
+    cy.contains('type')
+    })
+})
+                </code></pre>
+                <p>Код 8. Демонстрация на cy.contains()</p>
+                <p>
+                    След като сме открили линка, който съдържа търсената дума, ще се опитаме да го отворим. Към вече
+                    съществуващата команда от предходния пример, добавяме и командата .click():
+                </p>
+                <pre><code class="multiple-lines">
+describe('My First Test', () => {
+    it('clicks the link "type"', () => {
+    cy.visit('https://example.cypress.io')
+
+    cy.contains('type').click()
+    })
+})
+                </code></pre>
+                <p>Код 9. Демонстрация на .click()</p>
+                <p>
+                    В Cypress това добавяне на команди към команди се нарича “chaining” – командите образуват „верига“,
+                    която по лесен за разбиране начин показва какво точно прави нашият тест.
+                </p>
+                <p>
+                    Нека сега да проверим дали съдържанието на даден елемент е такова, каквото искаме да бъде. За тази
+                    цел трябва да направим “assertion” – вид команда, която проверява зададено условие и ако то не е
+                    изпълнено, тестването се прекратява. Да напишем команда, която взима текущия адрес и да добавим към
+                    нея assert команда, която проверява дали това е адреса, който очакваме да видим:
+                </p>
+                <pre><code class="multiple-lines">
+describe('My First Test', () => {
+    it('clicking "type" navigates to a new url', () => {
+    cy.visit('https://example.cypress.io')
+
+    cy.contains('type').click()
+
+    // Should be on a new URL which includes '/commands/actions'
+    cy.url().should('include', '/commands/actions')
+    })
+})
+                </code></pre>
+                <p>Код 10. Демонстрация на команда от вид "assertion"</p>
+                <p>
+                    Последните 3 функции, които ще добавим към нашия тест са:
+                    <ul>
+                        <li>cy.get() – използва се за избиране на елемент по CSS клас</li>
+                        <li>cy.type() – въвежда текст в избрано поле</li>
+                        <li>cy.should() – проверява дали съдържанието на даден елемент съвпада със съдържанието, подадено
+                            като параметър на командата</li>
+                    </ul>
+                </p>
+                <pre><code class="multiple-lines">
+describe('My First Test', () => {
+    it('Gets, types and asserts', () => {
+    cy.visit('https://example.cypress.io')
+
+    cy.contains('type').click()
+
+    // Should be on a new URL which includes '/commands/actions'
+    cy.url().should('include', '/commands/actions')
+
+    // Get an input, type into it and verify that the value has been updated
+    cy.get('.action-email')
+    .type('fake@email.com')
+    .should('have.value', 'fake@email.com')
+    })
+})
+                </code></pre>
+                <p>Код 11. Първи успешен тест със Cypress</p>
             </ol>
-        </div>
+            <p>
+                Вече можем да кажем, че успешно сме написали първия си тест със Cypress, който отваря уеб страница,
+                намира и кликва върху линк, верифицира URL, както и поведението на елемент от страницата при подадени
+                стойности.
+            </p>
+        </article>
     </section>
 
     <section id="cypress-vs-selenium">
-        <div class="section-heading">
+        <header class="section-heading">
             <h3>CYPRESS VS SELENIUM</h3>
-        </div>
-        <div class="section-content">
+        </header>
+
+        <article class="section-content">
             <ol>
                 <li>Инсталиране</li>
                 <p>
@@ -237,17 +440,19 @@
             <p>
                 В заключение, Cypress е страхотен вариант за екипи, които разработват основно с JavaScript. Като
                 инструмент, направен от разработчици за разработчици, Cypress е по-скоро начин за въвеждане в
-                автоматизираното тестване, отколкото заместител на Selenium.
+                автоматизираното тестване, отколкото заместител на Selenium. Cypress е идеално приложение за end-to-end
+                тестване на уеб приложения, което позволява автоматизираното тестване на всичко, което може да се отвори
+                в браузър.
             </p>
-        </div>
+        </article>
     </section>
 
     <section id="sources">
-        <div class="section-heading">
+        <header class="section-heading">
             <h3>ИЗТОЧНИЦИ</h3>
-        </div>
+        </header>
 
-        <div class="section-content">
+        <article class="section-content">
             <p>
                 [1] Aashish Khetarpal, <a href="https://www.toolsqa.com/cypress/what-is-cypress/" target="_blank">"What
                     is Cypress: Introduction and Architecture"</a>, публикуван на 2020-04-04.
@@ -268,9 +473,16 @@
             <p>
                 [5] <a href="https://www.cypress.io/" target="_blank">Официален сайт на Cypress</a>
             </p>
-        </div>
-
+            <p>
+                [6] <a href="https://docs.cypress.io/guides/getting-started/writing-your-first-test"
+                    target="_blank">Първи тест със Cypress</a>
+            </p>
+        </article>
     </section>
+
+    <footer>
+        <p>Автор: Калина Каменова, СИ, 62313</p>
+    </footer>
 
 </body>
 
